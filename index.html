@@ -1,1 +1,97 @@
-here<h1>safespot</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpot - Crime Reporting</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 600px; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin: auto; }
+        h2 { text-align: center; color: #d9534f; margin-bottom: 5px; }
+        .subtitle { text-align: center; font-size: 14px; color: #666; margin-bottom: 20px; }
+        .lang-switch { text-align: right; margin-bottom: 15px; }
+        .lang-switch button { background: #007bff; color: white; border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button.submit-btn { width: 100%; background: #28a745; color: white; border: none; padding: 12px; border-radius: 4px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+        button.submit-btn:hover { background: #218838; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switch">
+        <button onclick="toggleLanguage()" id="langBtn">বাংলা</button>
+    </div>
+
+    <h2 id="titleEn">SafeSpot - Crime Reporting</h2>
+    <div class="subtitle" id="subtitleEn">Report safely and securely</div>
+
+    <form onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label id="labelName">Your Name (Optional):</label>
+            <input type="text" id="reporterName" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label id="labelCrime">Crime Type:</label>
+            <select id="crimeType">
+                <option value="theft">Theft / Robbery</option>
+                <option value="assault">Assault / Violence</option>
+                <option value="harassment">Harassment</option>
+                <option value="fraud">Fraud / Scam</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label id="labelLocation">Location:</label>
+            <input type="text" id="crimeLocation" placeholder="Enter location or area" required>
+        </div>
+
+        <div class="form-group">
+            <label id="labelDesc">Description:</label>
+            <textarea id="crimeDesc" rows="4" placeholder="Describe what happened..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit Report</button>
+    </form>
+</div>
+
+<script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+        if (currentLang === 'en') {
+            currentLang = 'bn';
+            document.getElementById('langBtn').innerText = 'English';
+            document.getElementById('titleEn').innerText = 'SafeSpot - অপরাধ রিপোর্টিং';
+            document.getElementById('subtitleEn').innerText = 'নিরাপদে ও গোপনে অপরাধের তথ্য দিন';
+            document.getElementById('labelName').innerText = 'আপনার নাম (ঐচ্ছিক):';
+            document.getElementById('labelCrime').innerText = 'অপরাধের ধরণ:';
+            document.getElementById('labelLocation').innerText = 'স্থান:';
+            document.getElementById('labelDesc').innerText = 'বিস্তারিত বিবরণ:';
+            document.getElementById('submitBtn').innerText = 'রিপোর্ট জমা দিন';
+        } else {
+            currentLang = 'en';
+            document.getElementById('langBtn').innerText = 'বাংলা';
+            document.getElementById('titleEn').innerText = 'SafeSpot - Crime Reporting';
+            document.getElementById('subtitleEn').innerText = 'Report safely and securely';
+            document.getElementById('labelName').innerText = 'Your Name (Optional):';
+            document.getElementById('labelCrime').innerText = 'Crime Type:';
+            document.getElementById('labelLocation').innerText = 'Location:';
+            document.getElementById('labelDesc').innerText = 'Description:';
+            document.getElementById('submitBtn').innerText = 'Submit Report';
+        }
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        alert(currentLang === 'en' ? 'Report submitted successfully!' : 'রিপোর্ট সফলভাবে জমা দেওয়া হয়েছে!');
+    }
+</script>
+
+</body>
+</html>
