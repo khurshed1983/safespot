@@ -240,3 +240,46 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+// স্বয়ংক্রিয়ভাবে হেড ট্যাগে আইকন ও ম্যানিফেস্ট যুক্ত করার কোড
+(function() {
+    var head = document.head;
+
+    // manifest.json লিংক করা
+    var manifestLink = document.createElement('link');
+    manifestLink.rel = 'manifest';
+    manifestLink.href = 'manifest.json';
+    head.appendChild(manifestLink);
+
+    // লোগো আইকন লিংক করা
+    var iconLink1 = document.createElement('link');
+    iconLink1.rel = 'icon';
+    iconLink1.type = 'image/png';
+    iconLink1.href = 'logo.png';
+    head.appendChild(iconLink1);
+
+    var iconLink2 = document.createElement('link');
+    iconLink2.rel = 'apple-touch-icon';
+    iconLink2.href = 'logo.png';
+    head.appendChild(iconLink2);
+// স্বয়ংক্রিয়ভাবে হেড ট্যাগে আইকন ও ম্যানিফেস্ট যুক্ত করার কোড
+(function() {
+    var head = document.head;
+
+    // manifest.json লিংক করা
+    var manifestLink = document.createElement('link');
+    manifestLink.rel = 'manifest';
+    manifestLink.href = 'manifest.json';
+    head.appendChild(manifestLink);
+
+    // লোগো আইকন লিংক করা
+    var iconLink1 = document.createElement('link');
+    iconLink1.rel = 'icon';
+    iconLink1.type = 'image/png';
+    iconLink1.href = 'logo.png';
+    head.appendChild(iconLink1);
+
+    var iconLink2 = document.createElement('link');
+    iconLink2.rel = 'apple-touch-icon';
+    iconLink2.href = 'logo.png';
+    head.appendChild(iconLink2);
+    script src="script.js"></script>
