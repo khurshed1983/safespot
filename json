@@ -1,0 +1,16 @@
+{
+  "name": "SafeSpot Crime Reporting",
+  "short_name": "SafeSpot",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffb300",
+  "theme_color": "#ffb300",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
