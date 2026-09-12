@@ -18,3 +18,81 @@
     }
   ]
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSpot - App Icon Setup</title>
+    
+    <!-- মোবাইল স্ক্রিনে অ্যাপ হিসেবে ইন্সটল করার জন্য এটি জরুরি -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffb300">
+    
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f5; padding: 20px; }
+        .big-envelope-box { max-width: 650px; margin: auto; background: #fff8e1; border: 3px solid #ffb300; border-radius: 8px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .big-envelope-header { background: #ffb300; color: #5d4037; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 5px; text-align: center; font-size: 16px; }
+        .small-envelopes-wrapper { display: none; margin-top: 15px; }
+        .small-envelope-item { background: #ffffff; border: 2px solid #90caf9; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+        .small-envelope-label { background: #e3f2fd; color: #0d47a1; padding: 10px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .sealed-code-content { display: none; padding: 15px; background: #1e1e1e; color: #4ec9b0; font-family: monospace; font-size: 13px; border-top: 2px solid #90caf9; white-space: pre-wrap; margin: 0; }
+    </style>
+</head>
+<body>
+
+<div class="big-envelope-box">
+    <div class="big-envelope-header" onclick="openBigEnvelope()">
+        🗂️ বড় খাম: SafeSpot Project Storage (ক্লিক করে ছোট খামগুলো বের করুন)
+    </div>
+
+    <div id="smallEnvelopesContainer" class="small-envelopes-wrapper">
+        
+        <!-- ছোট খাম ০১ -->
+        <div class="small-envelope-item">
+            <div class="small-envelope-label" onclick="openSmallEnvelope('env_01')">
+                <span>✉️ [01] Style Data</span>
+                <span style="font-size: 11px; background: #fff; padding: 3px 8px; border-radius: 4px; color: #0d47a1; border: 1px solid #90caf9;">খাম খুলুন</span>
+            </div>
+            <div id="env_01" class="sealed-code-content">
+body { 
+    font-family: Arial, sans-serif; 
+    background: #f4f6f9; 
+    margin: 0; 
+}
+            </div>
+        </div>
+
+        <!-- ছোট খাম ০২ -->
+        <div class="small-envelope-item">
+            <div class="small-envelope-label" onclick="openSmallEnvelope('env_02')">
+                <span>✉️ [02] Form Inputs</span>
+                <span style="font-size: 11px; background: #fff; padding: 3px 8px; border-radius: 4px; color: #0d47a1; border: 1px solid #90caf9;">খাম খুলুন</span>
+            </div>
+            <div id="env_02" class="sealed-code-content">
+&lt;div class="form-group"&gt;
+    &lt;label&gt;Crime Type:&lt;/label&gt;
+    &lt;select id="crimeType"&gt;
+        &lt;option value="theft"&gt;Theft&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function openBigEnvelope() {
+        var wrapper = document.getElementById('smallEnvelopesContainer');
+        wrapper.style.display = (wrapper.style.display === "block") ? "none" : "block";
+    }
+
+    function openSmallEnvelope(envId) {
+        var targetCodeBox = document.getElementById(envId);
+        targetCodeBox.style.display = (targetCodeBox.style.display === "block") ? "none" : "block";
+    }
+</script>
+
+</body>
+</html>
