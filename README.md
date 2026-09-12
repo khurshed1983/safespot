@@ -24,10 +24,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeSpot - App Icon Setup</title>
-    
-    <!-- মোবাইল স্ক্রিনে অ্যাপ হিসেবে ইন্সটল করার জন্য এটি জরুরি -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#ffb300">
+   {
+  "name": "SafeSpot",
+  "short_name": "SafeSpot",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffb300",
+  "theme_color": "#ffb300",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
     
     <style>
         body { font-family: Arial, sans-serif; background: #eef2f5; padding: 20px; }
